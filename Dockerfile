@@ -30,7 +30,7 @@ RUN set -ex \
     && npx playwright install --with-deps webkit \
     && apt-get autoremove -y \
     && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /tmp/* /var/lib/apt/lists/* /root/.npm/*
 
 EXPOSE 8050
 
