@@ -11,7 +11,7 @@ RUN set -ex \
     && cat package.json | grep -e name -e version | sed -e 's/^[[:space:]]\+//g;s/"//g;s/,//g' \
     && ls -al
 
-FROM ubuntu:jammy
+FROM debian:11-slim
 COPY --from=source /app /app
 
 ENV DEBIAN_FRONTEND=noninteractive
